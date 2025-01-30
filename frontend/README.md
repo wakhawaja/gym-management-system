@@ -1,8 +1,29 @@
-# React + Vite
+# Gold Spa - Fitness & Wellness Platform 🏋️‍♀️💪
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Gold Spa is a modern fitness and wellness platform built with **React + Vite**. It offers a seamless UI, authentication, and engaging user experience.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ User Authentication 🔐
+- ✅ Dashboard & Workout Tracking 📊
+- ✅ Fitness Articles & Blog 📝
+- ✅ Secure API Integration 🔄
+- ✅ Responsive Design 📱
+
+## 🛠️ Technologies Used
+
+- React.js
+- Vite.js
+- React Router
+- Context API for global state management
+- Tailwind CSS & Styled Components
+- Firebase Authentication
+
+## 🏃‍♂️ Getting Started
+
+### 1️⃣ **Clone the Repository**
+
+```bash
+git clone https://github.com/your-repo/gold-spa.git
+cd gold-spa
+```

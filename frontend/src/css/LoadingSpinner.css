@@ -1,0 +1,45 @@
+/* Centered Loader */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full height */
+    text-align: center;
+  }
+  
+  /* Spinner Animation */
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid var(--btn-color); /* Primary color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  /* Loading Text */
+  .loading-spinner h2 {
+    font-size: 1.2rem;
+    color: var(--btn-color); /* Match theme color */
+    font-weight: bold;
+  }
+  
+  /* Keyframes for Animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .loading-spinner h2 {
+      font-size: 1rem; /* Smaller text on mobile */
+    }
+  }
+  

@@ -2,16 +2,82 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gold-Spa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Title -->
+    <title>Gold Spa | Gym Management System</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta
+      name="description"
+      content="Gold Spa Gym Management System - Manage your fitness journey efficiently and achieve your fitness goals with ease."
+    />
+    <meta
+      name="keywords"
+      content="Gym, Fitness, Health, Gold Spa, Workout, Training, Management"
+    />
+    <meta name="author" content="Your Name" />
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Gold Spa | Gym Management System" />
+    <meta
+      property="og:description"
+      content="Gold Spa Gym Management System - Manage your fitness journey efficiently and achieve your fitness goals with ease."
+    />
+    <meta property="og:image" content="/images/social-preview.png" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gold Spa | Gym Management System" />
+    <meta
+      name="twitter:description"
+      content="Track your fitness goals and access personalized content with Gold Spa."
+    />
+    <meta name="twitter:image" content="/images/social-preview.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Preconnect for Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <!-- JavaScript -->
+    <script type="module" src="/src/main.jsx" defer></script>
   </head>
   <body>
+    <!-- Root Element for React App -->
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Inline Loader Fallback -->
+    <style>
+      #root:empty {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Urbanist", sans-serif;
+        font-size: 1.6rem;
+        color: var(--btn-color);
+      }
+    </style>
   </body>
 </html>
