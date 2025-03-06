@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as *;
+
+.footer {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  min-height: var(--footer_height);
+  padding: calc(var(--std_padding) / 2) 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  a {
+    font-size: var(--std_font-size);
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease;
+
+    &:hover {
+      color: var(--btn-hover);
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: calc(var(--std_padding) * 0.75) 0;
+  }
+}

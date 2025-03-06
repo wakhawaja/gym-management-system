@@ -1,0 +1,40 @@
+/* vendors/_vendor.scss */
+
+/* 
+  Vendor Styles & Overrides
+  --------------------------------------------------
+  Use this file to import third‐party vendor styles or
+  to override default styles from vendor libraries.
+*/
+
+/* Example: Import Normalize.css (if not already imported via HTML)
+   Note: If you include Normalize via HTML or your bundler, you can remove this.
+@import "~normalize.css/normalize.css";
+*/
+
+/* Example: Override for a vendor component (e.g., slick-carousel) */
+.slick-slider {
+    /* Customize slick-slider defaults if needed */
+    /* For instance, you might adjust arrow or dot colors */
+    .slick-prev,
+    .slick-next {
+      color: var(--btn-color);
+    }
+    .slick-dots li button:before {
+      font-size: 1rem;
+      color: var(--btn-color);
+    }
+  }
+  
+  /* Example: Generic vendor alert override */
+  .vendor-alert {
+    background-color: var(--danger-color);
+    color: var(--text-color);
+    padding: var(--std_padding);
+    border-radius: var(--border-radius);
+    font-size: var(--std_font-size);
+    line-height: var(--std_line-height);
+  }
+  
+  /* Additional vendor-specific styles or overrides can be added below */
+  

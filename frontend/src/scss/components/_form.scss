@@ -1,0 +1,57 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: max(var(--min_page_height), 100vh); // Ensures form covers content & viewport
+  padding: var(--std_padding);
+  background-color: var(--bg-color);
+  margin: var(--std_margin_container);
+
+  .form-group {
+    width: var(--full_height_width);
+    margin-bottom: var(--std_margin);
+
+    label {
+      display: block;
+      font-size: var(--std_paragraph-size);
+      margin-bottom: calc(var(--std_margin) / 2);
+      color: var(--helper-color);
+    }
+
+    input,
+    textarea,
+    select {
+      width: var(--full_height_width);
+      padding: var(--std_padding);
+      border: 1px solid var(--btn-color);
+      border-radius: var(--border-radius);
+      background-color: var(--bg-light);
+      color: var(--text-color);
+      font-size: var(--std_paragraph-size);
+      margin-bottom: calc(var(--std_padding) / 2);
+      transition: border-color var(--transition-speed);
+
+      &:focus {
+        border-color: var(--btn-hover);
+        outline: none;
+      }
+    }
+  }
+
+  .form-button-group {
+    display: flex;
+    gap: var(--std_gap_4);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    padding: calc(var(--std_padding) / 2);
+  }
+}

@@ -1,29 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Title -->
+    <!-- Title & SEO -->
     <title>Gold Spa | Gym Management System</title>
-
-    <!-- Meta Tags for SEO -->
     <meta
       name="description"
-      content="Gold Spa Gym Management System - Manage your fitness journey efficiently and achieve your fitness goals with ease."
+      content="Manage your fitness journey efficiently with Gold Spa."
     />
     <meta
       name="keywords"
-      content="Gym, Fitness, Health, Gold Spa, Workout, Training, Management"
+      content="Gym, Fitness, Health, Workout, Training, Management"
     />
-    <meta name="author" content="Your Name" />
+    <meta name="author" content="Khawaja Waqas Ahmed" />
 
-    <!-- Open Graph Meta Tags for Social Media -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Gold Spa | Gym Management System" />
     <meta
       property="og:description"
-      content="Gold Spa Gym Management System - Manage your fitness journey efficiently and achieve your fitness goals with ease."
+      content="Track your fitness goals and manage memberships efficiently with Gold Spa."
     />
     <meta property="og:image" content="/images/social-preview.png" />
     <meta property="og:url" content="https://yourwebsite.com" />
@@ -34,38 +32,115 @@
     <meta name="twitter:title" content="Gold Spa | Gym Management System" />
     <meta
       name="twitter:description"
-      content="Track your fitness goals and access personalized content with Gold Spa."
+      content="Manage memberships and track workouts easily with Gold Spa."
     />
     <meta name="twitter:image" content="/images/social-preview.png" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-
-    <!-- Preconnect for Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Google Fonts -->
+    <!-- Favicon & Icons -->
+    <link rel="icon" href="./assets/favicon/favicon.ico" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&display=swap"
-      rel="stylesheet"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
     />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./assets/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+
+    <!-- ✅ Theme Colors for Chrome, Edge, and Windows -->
+    <meta name="theme-color" content="#646cff" />
+    <meta name="msapplication-navbutton-color" content="#646cff" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- ✅ JavaScript Fix for Firefox & Opera -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const isFirefoxOrOpera = /Firefox|OPR/.test(navigator.userAgent);
+        if (isFirefoxOrOpera) {
+          document
+            .querySelector("meta[name='theme-color']")
+            .setAttribute("content", "#646cff");
+          document.documentElement.style.backgroundColor = "#646cff";
+        }
+      });
+    </script>
+
+    <!-- ✅ CSS Fallback for Firefox & Opera -->
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+
+      @supports (-moz-appearance: none) {
+        /* Firefox-Specific Theme Fix */
+        body {
+          background-color: #646cff !important;
+        }
+      }
+
+      @supports (-o-object-fit: contain) {
+        /* Opera-Specific Theme Fix */
+        body {
+          background-color: #646cff !important;
+        }
+      }
+    </style>
+
+    <!-- ✅ JavaScript Fallback for Firefox & Opera -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const isFirefoxOrOpera = /Firefox|OPR/.test(navigator.userAgent);
+        if (isFirefoxOrOpera) {
+          document
+            .querySelector("meta[name='theme-color']")
+            .setAttribute("content", "#646cff");
+          document.body.style.backgroundColor = "#646cff"; // Ensures UI matches theme
+        }
+      });
+    </script>
+
+    <!-- Preload Fonts for Performance -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
+    /></noscript>
 
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/css/main.css" />
-
-    <!-- JavaScript -->
-    <script type="module" src="/src/main.jsx" defer></script>
+    <!-- Stylesheet (Ensure SCSS is compiled to CSS) -->
+    <link rel="stylesheet" href="./dist/styles.css" />
   </head>
+
   <body>
-    <!-- Root Element for React App -->
-    <div id="root"></div>
+    <!-- React Root Element -->
+    <div id="root">
+      <noscript>
+        <p
+          style="text-align: center; font-size: 1.4rem; color: var(--btn-color)"
+        >
+          JavaScript is required to run this application.
+        </p>
+      </noscript>
+    </div>
 
     <!-- Inline Loader Fallback -->
     <style>
@@ -74,10 +149,13 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        font-family: "Urbanist", sans-serif;
+        font-family: "Leckerli One", cursive;
         font-size: 1.6rem;
         color: var(--btn-color);
       }
     </style>
+
+    <!-- React App Script -->
+    <script type="module" src="./src/index.jsx"></script>
   </body>
 </html>

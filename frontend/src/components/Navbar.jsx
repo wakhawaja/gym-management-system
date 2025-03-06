@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import "../css/navbar.css";
+import "../scss/components/_navbar.scss";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -12,12 +12,10 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
   const closeMenu = () => setMenuOpen(false);
 
   const navLinks = [
@@ -34,7 +32,7 @@ const Navbar = () => {
     <header className={`navbar-container ${scrolled ? "scrolled" : ""}`}>
       <a href="/" className="brand-container">
         <img
-          src="./images/logos/goldspa-logo.png"
+          src="/assets/images/logos/goldspa-logo.png"
           alt="Gold Spa Logo"
           className="site-logo"
         />

@@ -1,0 +1,67 @@
+// components/_analytics.scss
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+@mixin analyticsSection {
+  @include container;
+  margin: var(--std_gap) auto;
+  background-color: var(--dark-color);
+  border-radius: var(--border-radius);
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--std_gap);
+
+    .div1 {
+      text-align: center;
+      border-right: var(--border_thin);
+      padding: var(--std_left-right_padding_plus1);
+
+      // Add vertical bar separator on larger screens
+      &:not(:nth-child(4n))::after {
+        content: "|";
+        color: var(--text-color);
+        margin-left: var(--std_padding);
+      }
+
+      &:nth-child(4n) {
+        border-right: none;
+        &::after {
+          content: "";
+        }
+      }
+
+      h1,
+      h3 {
+        font-size: var(--std_heading-size);
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      .div1 {
+        border-right: none;
+        border-bottom: var(--border_thin);
+        padding: var(--std_padding);
+        &::after {
+          content: "";
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr;
+      .div1 {
+        border-bottom: var(--border_thin);
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

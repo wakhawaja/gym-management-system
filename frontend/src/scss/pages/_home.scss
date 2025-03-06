@@ -1,0 +1,81 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/utilities" as *;
+@use "../components/analytics" as analytics;
+
+.home-section {
+  @include section;
+
+  .banner-container {
+    @include container;
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
+
+    .banner-slider {
+      width: 100%;
+      height: 100%;
+
+      .banner-image {
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      padding: 0 1rem;
+    }
+  }
+
+  .section-main {
+    @include container;
+
+    .container {
+      @extend .grid;
+      @extend .grid-two-cols;
+      align-items: center;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      h2 {
+        font-size: var(--std_heading-size);
+        margin: var(--std_margin);
+      }
+
+      p {
+        font-size: var(--std_paragraph-size);
+      }
+
+      .btn-group {
+        margin-top: var(--std_margin);
+      }
+    }
+
+    .main-video {
+      display: flex;
+      justify-content: center;
+
+      .promo-video {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: var(--border-radius);
+      }
+    }
+  }
+
+  .analytics-section {
+    @include analytics.analyticsSection;
+  }
+}

@@ -13,18 +13,24 @@ class ErrorBoundary extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     console.error("ErrorBoundary caught an error:", error, errorInfo);
+    // Optionally report error to an external service here.
   }
+
+  handleRetry = () => {
+    // Optionally clear any caches/state before reload
+    window.location.reload();
+  };
 
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ textAlign: "center", padding: "2rem" }}>
+        <div
+          className="error-boundary"
+          style={{ textAlign: "center", padding: "2rem" }}
+        >
           <h1>Oops! Something went wrong.</h1>
           <p>Please refresh the page or contact support.</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="btn btn-primary"
-          >
+          <button onClick={this.handleRetry} className="btn btn-primary">
             Retry
           </button>
         </div>
@@ -34,7 +40,6 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-// ✅ Add PropTypes validation
 ErrorBoundary.propTypes = {
   children: PropTypes.node.isRequired,
 };

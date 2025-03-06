@@ -1,6 +1,5 @@
-import { BrowserRouter as Router } from "react-router-dom";
 import Layout from "./components/Layout";
-import PageRoutes from "./routes/PageRoutes"; // Standardized import casing
+import PageRoutes from "./routes/PageRoutes";
 
 const App = () => {
   return (

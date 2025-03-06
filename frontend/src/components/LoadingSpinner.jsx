@@ -1,8 +1,8 @@
-import "../css/LoadingSpinner.css"; // Ensures consistent styling
+import "../scss/components/_loadingSpinner.scss";
 
 const LoadingSpinner = () => (
   <div className="loading-spinner">
-    <div className="spinner"></div>
+    <div className="spinner" aria-hidden="true"></div>
     <h2>Loading...</h2>
   </div>
 );

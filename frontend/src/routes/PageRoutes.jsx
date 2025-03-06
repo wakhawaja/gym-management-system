@@ -1,52 +1,73 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import LoadingSpinner from "../components/LoadingSpinner"; // Moved to components
-import ProtectedRoute from "./ProtectedRoute"; // NEW: Protects auth routes
+import LoadingSpinner from "../components/loadingSpinner";
+import ProtectedRoute from "./ProtectedRoute";
 
-// Lazy-loaded pages for better performance
+// ✅ Lazy-loaded pages for better performance
 const Home = lazy(() => import("../pages/Home"));
 const About = lazy(() => import("../pages/About"));
 const Services = lazy(() => import("../pages/Services"));
 const Contact = lazy(() => import("../pages/Contact"));
 const Login = lazy(() => import("../pages/Login"));
 const Signup = lazy(() => import("../pages/Signup"));
-const Dashboard = lazy(() => import("../pages/Dashboard")); // NEW: Auth Required
-const Profile = lazy(() => import("../pages/Profile")); // NEW: Auth Required
+const Dashboard = lazy(() => import("../pages/Dashboard"));
+const Profile = lazy(() => import("../pages/Profile"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const PageRoutes = () => {
   return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+    <Routes>
+      {["/", "/about", "/services", "/contact", "/login", "/signup"].map(
+        (path, idx) => (
+          <Route
+            key={idx}
+            path={path}
+            element={
+              <Suspense fallback={<LoadingSpinner />}>
+                {path === "/" ? (
+                  <Home />
+                ) : path === "/about" ? (
+                  <About />
+                ) : path === "/services" ? (
+                  <Services />
+                ) : path === "/contact" ? (
+                  <Contact />
+                ) : path === "/login" ? (
+                  <Login />
+                ) : (
+                  <Signup />
+                )}
+              </Suspense>
+            }
+          />
+        )
+      )}
 
-        {/* Protected Routes (Require Authentication) */}
+      {/* ✅ Protected Routes */}
+      {["/dashboard", "/profile"].map((path, idx) => (
         <Route
-          path="/dashboard"
+          key={idx}
+          path={path}
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Suspense fallback={<LoadingSpinner />}>
+                {path === "/dashboard" ? <Dashboard /> : <Profile />}
+              </Suspense>
             </ProtectedRoute>
           }
         />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
+      ))}
 
-        {/* 404 Fallback */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
+      {/* ✅ 404 Fallback */}
+      <Route
+        path="*"
+        element={
+          <Suspense fallback={<LoadingSpinner />}>
+            <NotFound />
+          </Suspense>
+        }
+      />
+    </Routes>
   );
 };
 

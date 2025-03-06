@@ -1,0 +1,14 @@
+// Utility Classes & Grid Layouts
+.grid {
+  display: grid;
+  gap: var(--std_gap);
+  align-items: center;
+}
+
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-four-cols {
+  grid-template-columns: repeat(4, 1fr);
+}

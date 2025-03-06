@@ -4,7 +4,7 @@ const Profile = () => {
   const { user } = useAuth();
 
   return (
-    <main className="profile-section" aria-label="User Profile">
+    <main className="section-1" aria-label="User Profile">
       <h1>Your Profile</h1>
       {user ? (
         <>

@@ -1,0 +1,14 @@
+// abstracts/_mixins.scss
+@mixin container {
+  max-width: var(--std_container_height_width);
+  margin: var(--std_margin_container);
+  padding: 0 calc(var(--std_padding) * 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin section {
+  min-height: var(--min_page_height);
+  padding: var(--std_section-padding) 0;
+}

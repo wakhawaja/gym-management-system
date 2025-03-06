@@ -1,27 +1,38 @@
 import { NavLink } from "react-router-dom";
-import "./Sidebar.css";
 
 const Sidebar = () => {
   return (
-    <aside className="sidebar">
+    <aside className="sidebar" aria-label="Sidebar Navigation">
       <ul>
         <li>
-          <NavLink to="/dashboard" activeClassName="active">
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Dashboard
           </NavLink>
         </li>
         <li>
-          <NavLink to="/profile" activeClassName="active">
+          <NavLink
+            to="/profile"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Profile
           </NavLink>
         </li>
         <li>
-          <NavLink to="/settings" activeClassName="active">
+          <NavLink
+            to="/settings"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Settings
           </NavLink>
         </li>
         <li>
-          <NavLink to="/logout" activeClassName="active">
+          <NavLink
+            to="/logout"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Logout
           </NavLink>
         </li>

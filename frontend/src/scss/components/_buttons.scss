@@ -1,0 +1,63 @@
+// File: components/_buttons.scss
+@use "../abstracts/variables" as *;
+
+.btn {
+  padding: var(--btn-padding);
+  font-size: var(--std_paragraph-size);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition:
+    background var(--transition-speed),
+    transform 0.2s ease;
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-color);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.btn-primary {
+  background-color: var(--btn-color);
+  &:hover {
+    background-color: var(--btn-hover);
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px var(--btn-color);
+  &:hover {
+    background-color: var(--dark-color);
+  }
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  &:hover {
+    background-color: #00b386;
+  }
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  &:hover {
+    background-color: #e63946;
+  }
+}
+
+.btn-group {
+  display: flex;
+  gap: var(--std_margin);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    padding: calc(var(--btn-padding) / 1.25);
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,55 @@
+/* _reset.scss
+   --------------------------------------------------
+   A CSS reset to normalize default browser styles.
+   --------------------------------------------------
+*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Reset images and media to be responsive */
+img,
+video,
+canvas,
+audio {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove default anchor styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Set default border to none for form elements */
+input,
+textarea,
+select,
+button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Set body defaults */
+body {
+  font-family: sans-serif; // You may update this to your preferred font stack
+  font-size: var(--std_font-size);
+  line-height: var(--std_line-height);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

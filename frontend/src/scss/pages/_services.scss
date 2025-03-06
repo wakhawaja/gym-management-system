@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/utilities" as *;
+
+.services-section {
+  @include section;
+
+  .container {
+    @extend .grid;
+    @extend .grid-two-cols;
+    gap: var(--std_gap);
+
+    .service {
+      background-color: var(--bg-light);
+      padding: var(--std_padding);
+      border-radius: var(--border-radius);
+      text-align: center;
+
+      h3 {
+        font-size: var(--std_heading-size);
+        color: var(--btn-color);
+        margin-bottom: var(--std_margin);
+      }
+
+      p {
+        font-size: var(--std_paragraph-size);
+        color: var(--text-color);
+      }
+    }
+  }
+}

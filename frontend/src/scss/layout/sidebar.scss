@@ -1,0 +1,82 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.sidebar {
+  width: 250px;
+  height: 100vh; // Full height
+  background-color: var(--dark-color);
+  color: var(--text-color);
+  padding: var(--std_padding);
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  transition: all var(--transition-speed) ease-in-out;
+
+  // Sidebar Navigation Links
+  .sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-bottom: var(--std_margin);
+      a {
+        display: block;
+        padding: var(--std_padding);
+        color: var(--text-color);
+        font-size: var(--std_paragraph-size);
+        transition: color var(--transition-speed);
+        &:hover {
+          color: var(--btn-hover);
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+
+  // Sidebar Toggle (For Mobile)
+  .sidebar-toggle {
+    display: none; // Hide by default
+    position: absolute;
+    top: 1rem;
+    right: -2.5rem;
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: var(--std_font-size);
+    transition: background var(--transition-speed);
+    
+    &:hover {
+      background-color: var(--btn-hover);
+    }
+  }
+}
+
+// Responsive Behavior (Collapsible Sidebar)
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px; // Slightly smaller on tablets
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; // Full-width sidebar for mobile
+    left: -100%; // Hide by default
+    position: fixed;
+    transition: left var(--transition-speed) ease-in-out;
+
+    &.open {
+      left: 0; // Show when toggled
+    }
+
+    .sidebar-toggle {
+      display: block; // Show toggle button in mobile
+    }
+  }
+}

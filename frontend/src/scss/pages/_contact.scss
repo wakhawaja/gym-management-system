@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.contact-section {
+  @include section;
+
+  .container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--std_gap);
+    text-align: center;
+  }
+
+  h2 {
+    font-size: var(--std_heading-size);
+    margin-bottom: var(--std_margin);
+    color: var(--btn-color);
+  }
+
+  p {
+    font-size: var(--std_paragraph-size);
+    color: var(--text-color);
+  }
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../css/Signup.css";
+import "../scss/pages/_Signup.scss";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const Signup = () => {
   };
 
   return (
-    <section className="signup-section">
+    <section className="section-1">
       <div className="container grid grid-two-cols">
         {/* Signup Image */}
         <div className="signup-left">
@@ -54,7 +54,7 @@ const Signup = () => {
         {/* Signup Form */}
         <div className="signup-right">
           <div className="signup-header">
-            <h1>Create Account</h1>
+            <h2>Create Account</h2>
             <p className="sub-text">Welcome! Please fill in your details.</p>
           </div>
           <form onSubmit={handleSubmit} className="signup-form">

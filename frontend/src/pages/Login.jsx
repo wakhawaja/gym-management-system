@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import "../css/Login.css";
+import "../scss/pages/_Login.scss";
 
 const SocialLoginButton = ({ href, imgSrc, altText, children }) => (
   <a href={href} className="btn btn-social" aria-label={altText}>
@@ -33,7 +33,7 @@ const Login = () => {
   };
 
   return (
-    <section className="login-section">
+    <section className="section-1">
       <div className="container grid grid-two-cols">
         <div className="login-left">
           <h1 className="login-heading">Explore Your Creativity</h1>
@@ -50,7 +50,7 @@ const Login = () => {
         {/* Login Form */}
         <div className="login-right">
           <div className="login-header">
-            <h1>Login</h1>
+            <h2>Login</h2>
             <p className="sub-text">Welcome back. Please enter your details.</p>
           </div>
           <form onSubmit={handleSubmit} className="login-form">
@@ -89,14 +89,14 @@ const Login = () => {
           <div className="social-login">
             <SocialLoginButton
               href="/auth/github"
-              imgSrc="./images/icons/github.png"
+              imgSrc="/assets/images/icons/github.png"
               altText="Sign in with GitHub"
             >
               Sign in with GitHub
             </SocialLoginButton>
             <SocialLoginButton
               href="/auth/google"
-              imgSrc="./images/icons/google.png"
+              imgSrc="./assets/images/icons/google.png"
               altText="Sign in with Google"
             >
               Sign in with Google
