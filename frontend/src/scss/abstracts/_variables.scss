@@ -1,8 +1,9 @@
 :root {
   /* Colors */
-  --text-color: white;
+  --text-color: #ffffff;
   --text-dark: #222;
   --bg-color: #333333;
+  --bg-color-2: #505050;
   --bg-light: #f5f5f5;
   --dark-color: #121212;
   --helper-color: #99b9ff;
@@ -10,38 +11,35 @@
   --btn-hover: #4545d8;
   --danger-color: #ff4d4d;
   --success-color: #00cc99;
+  --font-family: "Open Sans", sans-serif; 
 
   /* Typography */
-  --std_font-size: 1rem;
   --std_line-height: 1.5;
   --std_heading-size: 2.5rem;
+  --std_font-size: 1.5rem;
   --std_paragraph-size: 1.25rem;
 
   /* Spacing */
   --std_margin: 1rem;
-  --std_margin_container: 0 auto;
+  --std_margin-container: 0 auto;
   --std_padding: 1rem;
-  --std_left-right_padding: 0 var(--std_padding);
-  --std_left-right_padding_plus1: var(--std_padding)
-    calc(var(--std_padding) * 2);
-  --std_top-bottom_padding: var(--std_padding) 0;
-  --std_top-bottom_padding_plus1: calc(var(--std_padding) * 2)
-    var(--std_padding);
+  --std_left-right-padding: 0 var(--std_padding);
+  --std_left-right-padding-plus1: var(--std_padding) calc(var(--std_padding) * 2);
+  --std_top-bottom-padding: var(--std_padding) 0;
+  --std_top-bottom-padding-plus1: calc(var(--std_padding) * 2) var(--std_padding);
   --std_section-padding: calc(var(--std_padding) * 4);
-  --std_gap: 0.5rem;
-  --std_gap_1: 1rem;
-  --std_gap_4: 4rem;
+  --std_gap: 1rem;
   --btn-padding: var(--std_padding) calc(var(--std_padding) * 2);
 
   /* Layout */
-  --full_height_width: 100%;
-  --std_height_width: 98%;
-  --footer_height: 60px;
-  --min_page_height: calc(100vh - var(--footer_height));
-  --logo_width_height: 40px;
+  --full-height-width: 100%;
+  --std_height-width: 98%;
+  --footer-height: 60px;
+  --min-page-height: calc(100vh - var(--footer-height));
+  --logo-width-height: 40px;
 
   /* Borders & Effects */
-  --border_thin: 0.2rem solid var(--text-color);
+  --border-thin: 0.2rem solid var(--text-color);
   --border-radius: 5px;
   --transition-speed: 0.3s;
 }

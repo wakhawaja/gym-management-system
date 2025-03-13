@@ -1,52 +1,100 @@
-@use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
 .form-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: max(var(--min_page_height), 100vh); // Ensures form covers content & viewport
+  /* Adjust the width to prevent the form from spanning too wide */
+  width: 90%;
+  max-width: 500px;
+  /* Cover at least the full viewport height */
+  min-height: max(var(--min_page_height), 100vh);
+  /* Spacing & background */
+  margin: var(--std_margin-container) auto;
   padding: var(--std_padding);
-  background-color: var(--bg-color);
-  margin: var(--std_margin_container);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px var(--btn-color);
+  gap: var(--std_gap);
+
+  .header {
+    text-align: center;
+    margin-bottom: var(--std_margin);
+
+    h2 {
+      font-size: var(--std_heading-size);
+      margin-bottom: var(--std_margin);
+      position: relative;
+
+      /* Horizontal line below heading */
+      &::after {
+        content: "";
+        display: block;
+        width: 100px; /* Adjust the width to your preference */
+        height: 5px; /* Thickness of the line */
+        background-color: var(--btn-color);
+        border-radius: var(--border-radius);
+        position: absolute;
+        left: 50%; /* Center the line */
+        transform: translateX(-50%); /* Center the line */
+      }
+    }
+
+    .sub-text {
+      font-size: var(--std_paragraph-size);
+      color: var(--helper-color);
+      margin-bottom: var(--std_margin);
+    }
+  }
 
   .form-group {
-    width: var(--full_height_width);
-    margin-bottom: var(--std_margin);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--std_gap);
+    margin-bottom: var(--std_gap);
 
     label {
       display: block;
       font-size: var(--std_paragraph-size);
       margin-bottom: calc(var(--std_margin) / 2);
-      color: var(--helper-color);
+      color: var(--text-color);
+      text-transform: capitalize;
     }
 
     input,
     textarea,
     select {
-      width: var(--full_height_width);
+      width: 100%;
       padding: var(--std_padding);
       border: 1px solid var(--btn-color);
       border-radius: var(--border-radius);
-      background-color: var(--bg-light);
+      background-color: var(--bg-color-2);
       color: var(--text-color);
       font-size: var(--std_paragraph-size);
-      margin-bottom: calc(var(--std_padding) / 2);
+      margin-bottom: var(--std_padding);
       transition: border-color var(--transition-speed);
+      box-sizing: border-box;
 
       &:focus {
         border-color: var(--btn-hover);
         outline: none;
       }
     }
+
+    /* Force buttons to span the full width of the form */
+    button {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: calc(var(--std_margin) / 2);
+    }
   }
 
-  .form-button-group {
-    display: flex;
-    gap: var(--std_gap_4);
-    flex-wrap: wrap;
-    justify-content: center;
+  /* Additional spacing or styling for messages or footers if needed */
+  .message {
+    margin-top: var(--std_margin);
+    font-size: var(--std_paragraph-size);
+    color: var(--success-color);
+    text-align: center;
   }
 }
 

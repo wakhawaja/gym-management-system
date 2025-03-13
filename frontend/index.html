@@ -3,9 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- Title & SEO -->
     <title>Gold Spa | Gym Management System</title>
     <meta
       name="description"
@@ -17,24 +14,23 @@
     />
     <meta name="author" content="Khawaja Waqas Ahmed" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Gold Spa | Gym Management System" />
-    <meta
-      property="og:description"
-      content="Track your fitness goals and manage memberships efficiently with Gold Spa."
-    />
-    <meta property="og:image" content="/images/social-preview.png" />
-    <meta property="og:url" content="https://yourwebsite.com" />
-    <meta property="og:type" content="website" />
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Gold Spa | Gym Management System" />
-    <meta
-      name="twitter:description"
-      content="Manage memberships and track workouts easily with Gold Spa."
+    <!-- Preload Fonts for Better Performance -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <meta name="twitter:image" content="/images/social-preview.png" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
+      />
+    </noscript>
 
     <!-- Favicon & Icons -->
     <link rel="icon" href="./assets/favicon/favicon.ico" />
@@ -49,113 +45,28 @@
       href="./assets/favicon/safari-pinned-tab.svg"
       color="#5bbad5"
     />
-    <meta name="msapplication-TileColor" content="#2b5797" />
 
-    <!-- ✅ Theme Colors for Chrome, Edge, and Windows -->
-    <meta name="theme-color" content="#646cff" />
-    <meta name="msapplication-navbutton-color" content="#646cff" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="color-scheme" content="light dark" />
-
-    <!-- ✅ JavaScript Fix for Firefox & Opera -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const isFirefoxOrOpera = /Firefox|OPR/.test(navigator.userAgent);
-        if (isFirefoxOrOpera) {
-          document
-            .querySelector("meta[name='theme-color']")
-            .setAttribute("content", "#646cff");
-          document.documentElement.style.backgroundColor = "#646cff";
-        }
-      });
-    </script>
-
-    <!-- ✅ CSS Fallback for Firefox & Opera -->
-    <style>
-      :root {
-        color-scheme: light dark;
-      }
-
-      @supports (-moz-appearance: none) {
-        /* Firefox-Specific Theme Fix */
-        body {
-          background-color: #646cff !important;
-        }
-      }
-
-      @supports (-o-object-fit: contain) {
-        /* Opera-Specific Theme Fix */
-        body {
-          background-color: #646cff !important;
-        }
-      }
-    </style>
-
-    <!-- ✅ JavaScript Fallback for Firefox & Opera -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const isFirefoxOrOpera = /Firefox|OPR/.test(navigator.userAgent);
-        if (isFirefoxOrOpera) {
-          document
-            .querySelector("meta[name='theme-color']")
-            .setAttribute("content", "#646cff");
-          document.body.style.backgroundColor = "#646cff"; // Ensures UI matches theme
-        }
-      });
-    </script>
-
-    <!-- Preload Fonts for Performance -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
-    /></noscript>
-
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-
-    <!-- Stylesheet (Ensure SCSS is compiled to CSS) -->
+    <!-- Global Stylesheet (Compiled via Vite) -->
     <link rel="stylesheet" href="./dist/styles.css" />
-  </head>
 
+    <!-- Critical CSS Inline: Reset Inheritance -->
+    <style>
+      /* Reset all styles on html, body, and #root to ensure a clean slate */
+      html,
+      body,
+      #root {
+        all: unset;
+      }
+      /* Note: Additional body styling will be defined in the next step */
+    </style>
+  </head>
   <body>
-    <!-- React Root Element -->
     <div id="root">
       <noscript>
-        <p
-          style="text-align: center; font-size: 1.4rem; color: var(--btn-color)"
-        >
-          JavaScript is required to run this application.
-        </p>
+        <p>JavaScript is required to run this application.</p>
       </noscript>
     </div>
-
-    <!-- Inline Loader Fallback -->
-    <style>
-      #root:empty {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-family: "Leckerli One", cursive;
-        font-size: 1.6rem;
-        color: var(--btn-color);
-      }
-    </style>
-
-    <!-- React App Script -->
-    <script type="module" src="./src/index.jsx"></script>
+    <!-- Defer main JavaScript for non-blocking rendering -->
+    <script type="module" src="./src/index.jsx" defer></script>
   </body>
 </html>

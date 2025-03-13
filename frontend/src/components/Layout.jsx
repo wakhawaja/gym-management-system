@@ -1,15 +1,16 @@
 import React, { Suspense, lazy } from "react";
 import PropTypes from "prop-types";
+import "../scss/layout/_layout.scss";
 import LoadingSpinner from "./LoadingSpinner";
 
-const Navbar = lazy(() => import("./Navbar"));
+const Header = lazy(() => import("./Header"));
 const Footer = lazy(() => import("./Footer"));
 
 const Layout = ({ children }) => {
   return (
     <>
       <Suspense fallback={<LoadingSpinner />}>
-        <Navbar />
+        <Header />
       </Suspense>
       <main className="content">{children}</main>
       <Suspense fallback={<LoadingSpinner />}>

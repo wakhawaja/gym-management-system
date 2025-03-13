@@ -1,14 +1,10 @@
 // main.scss
-
-// main.scss
 @use 'abstracts/variables';
 @use 'abstracts/mixins';
 @use 'abstracts/utilities';
 
 // Import base styles
-@use "abstracts/reset";
-@use "abstracts/base";
-@use "abstracts/typography";
+@use 'base/base';
 
 // Import components
 @use 'components/buttons';
@@ -20,16 +16,16 @@
 
 // Import layout
 @use 'layout/layout';
-@use "layout/sidebar";
+@use 'layout/sidebar';
 
 // Import Page Specific Styles
-@use "pages/home";
-@use "pages/about";
-@use "pages/contact";
-@use "pages/login";
-@use "pages/notfound";
-@use "pages/services";
-@use "pages/signup";
+@use 'pages/home';
+@use 'pages/about';
+@use 'pages/contact';
+@use 'pages/login';
+@use 'pages/notfound';
+@use 'pages/services';
+@use 'pages/signup';
 
 // Optionally, import vendor styles
-@use "vendors/vendor";
+@use 'vendors/vendor';

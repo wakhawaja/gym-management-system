@@ -1,30 +1,46 @@
-@use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 @use "../abstracts/utilities" as *;
 
 .services-section {
   @include section;
+  display: flex;
+  align-items: center;  // Center content vertically
 
-  .container {
-    @extend .grid;
-    @extend .grid-two-cols;
-    gap: var(--std_gap);
-
-    .service {
-      background-color: var(--bg-light);
-      padding: var(--std_padding);
-      border-radius: var(--border-radius);
+  .section-services {
+    width: 100%;
+    .container {
+      @extend .grid;
+      // Optional: if you want to center the grid items as well
+      justify-items: center;
       text-align: center;
 
-      h3 {
-        font-size: var(--std_heading-size);
-        color: var(--btn-color);
-        margin-bottom: var(--std_margin);
-      }
+      .service {
+        background-color: var(--bg-light);
+        padding: var(--std_padding);
+        border-radius: var(--border-radius);
+        text-align: center;
 
-      p {
+        h3 {
+          font-size: var(--std_heading-size);
+          color: var(--btn-color);
+          margin-bottom: var(--std_margin);
+        }
+
+        p {
+          font-size: var(--std_paragraph-size);
+          color: var(--text-color);
+        }
+      }
+    }
+
+    // Styling for services list (if needed)
+    .services-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
         font-size: var(--std_paragraph-size);
-        color: var(--text-color);
+        margin-bottom: var(--std_margin);
       }
     }
   }

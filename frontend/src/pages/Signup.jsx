@@ -36,10 +36,10 @@ const Signup = () => {
   };
 
   return (
-    <section className="section-1">
-      <div className="container grid grid-two-cols">
+    <section className="signup-section">
+      <div className="signup-container grid grid-two-cols">
         {/* Signup Image */}
-        <div className="signup-left">
+        <div className="signup-message">
           <h1 className="signup-heading">Join the Community</h1>
           <ul className="features-list">
             <li>Create and manage your account.</li>
@@ -52,13 +52,13 @@ const Signup = () => {
         </div>
 
         {/* Signup Form */}
-        <div className="signup-right">
-          <div className="signup-header">
-            <h2>Create Account</h2>
-            <p className="sub-text">Welcome! Please fill in your details.</p>
-          </div>
-          <form onSubmit={handleSubmit} className="signup-form">
-            <div className="form-group">
+        <div className="signup-form-container">
+          <form onSubmit={handleSubmit} className="form-group">
+            <div className="header">
+              <h2>Registration Form</h2>
+              <p className="sub-text">Welcome! Please fill in your details.</p>
+            </div>
+            <div className="form-entry">
               <label htmlFor="username">Username</label>
               <input
                 type="text"
@@ -70,7 +70,7 @@ const Signup = () => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="form-entry">
               <label htmlFor="email">Email Address</label>
               <input
                 type="email"
@@ -82,7 +82,7 @@ const Signup = () => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="form-entry">
               <label htmlFor="phone">Phone</label>
               <input
                 type="text"
@@ -94,7 +94,7 @@ const Signup = () => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="form-entry">
               <label htmlFor="password">Password</label>
               <input
                 type="password"
@@ -106,13 +106,15 @@ const Signup = () => {
                 required
               />
             </div>
-            <button
-              type="submit"
-              className="btn btn-success"
-              disabled={loading}
-            >
-              {loading ? "Signing Up..." : "Signup"}
-            </button>
+            <div className="form-button">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={loading}
+              >
+                {loading ? "Signing Up..." : "Signup"}
+              </button>
+            </div>
           </form>
           {message && <p className="message">{message}</p>}
           <p className="signup-footer">

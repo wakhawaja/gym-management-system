@@ -1,56 +1,17 @@
-import React, { useRef, useEffect } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { lazy, Suspense } from "react";
 import "../scss/pages/_home.scss";
 
-const sliderSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 300,
-  fade: false,
-};
-
-const bannerImages = ["gold_spa.jpg", "gold_spa_1.jpg", "gold_spa_2.jpg"];
-const imageBasePath = "assets/images/illustrations/gold_spa";
+const Banner = lazy(() => import("../components/Banner"));
+const Analytics = lazy(() => import("../components/Analytics"));
 
 const Home = () => {
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    // Force a resize to recalculate slider dimensions on initial load
-    window.dispatchEvent(new Event("resize"));
-    if (sliderRef.current) {
-      sliderRef.current.slickGoTo(0, true);
-    }
-  }, []);
-
   return (
-    <main className="section-1" aria-label="Welcome to Gold Spa and Fitness Club">
+    <section className="home-section" aria-label="Welcome to Gold Spa and Fitness Club">
+
       {/* Banner Section */}
-      <section id="banner_section" className="banner-container">
-        <Slider {...sliderSettings} className="banner-slider" ref={sliderRef}>
-          {bannerImages.map((image, index) => (
-            <div key={index} className="banner_image">
-              <picture>
-                <source
-                  media="(max-width: 767px)"
-                  srcSet={`${imageBasePath}/${image}`}
-                />
-                <img
-                  src={`${imageBasePath}/${image}`}
-                  alt="Gold Spa Banner"
-                  loading="lazy"
-                />
-              </picture>
-            </div>
-          ))}
-        </Slider>
-      </section>
+      <Suspense fallback={<div>Loading Analytics...</div>}>
+        <Banner />
+      </Suspense>
 
       {/* Main Content Section */}
       <section className="section-main">
@@ -77,10 +38,7 @@ const Home = () => {
           </div>
           <div className="main-video">
             <video className="promo-video" controls>
-              <source
-                src="assets/videos/promo-video.mp4"
-                type="video/mp4"
-              />
+              <source src="assets/videos/promo-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -88,36 +46,16 @@ const Home = () => {
       </section>
 
       {/* Analytics Section */}
-      <section className="analytics-section">
-        <div className="grid">
-          <div className="div1">
-            <h1>10+</h1>
-            <p>years of experience</p>
-          </div>
-          <div className="div1">
-            <h1>10,000+</h1>
-            <p>happy clients</p>
-          </div>
-          <div className="div1">
-            <h1>5+</h1>
-            <p>Well Known Trainers</p>
-          </div>
-          <div className="div1">
-            <h1>24/7</h1>
-            <p>service</p>
-          </div>
-        </div>
-      </section>
+      <Suspense fallback={<div>Loading Analytics...</div>}>
+        <Analytics />
+      </Suspense>
 
       {/* Additional Content Section */}
-      <section className="section-main">
+      <section className="section-main reverse">
         <div className="container grid grid-two-cols">
           <div className="main-video">
             <video className="promo-video" controls>
-              <source
-                src="assets/videos/promo-video.mp4"
-                type="video/mp4"
-              />
+              <source src="assets/videos/promo-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -141,7 +79,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </main>
+    </section>
   );
 };
 

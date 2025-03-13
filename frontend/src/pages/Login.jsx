@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import "../scss/pages/_Login.scss";
+import "../scss/pages/_login.scss";
 
 const SocialLoginButton = ({ href, imgSrc, altText, children }) => (
   <a href={href} className="btn btn-social" aria-label={altText}>
@@ -33,9 +33,9 @@ const Login = () => {
   };
 
   return (
-    <section className="section-1">
-      <div className="container grid grid-two-cols">
-        <div className="login-left">
+    <section className="login-section">
+      <div className="login-container grid grid-two-cols">
+        <div className="login-message">
           <h1 className="login-heading">Explore Your Creativity</h1>
           <ul className="features-list">
             <li>Bookmark your readings.</li>
@@ -47,14 +47,15 @@ const Login = () => {
           </p>
         </div>
 
-        {/* Login Form */}
-        <div className="login-right">
-          <div className="login-header">
-            <h2>Login</h2>
-            <p className="sub-text">Welcome back. Please enter your details.</p>
-          </div>
-          <form onSubmit={handleSubmit} className="login-form">
-            <div className="form-group">
+        <div className="login-form-container">
+          <form onSubmit={handleSubmit} className="form-group">
+            <div className="header">
+              <h2>Login Form</h2>
+              <p className="sub-text">
+                Welcome back. Please enter your details.
+              </p>
+            </div>
+            <div className="form-entry">
               <label htmlFor="email">Email Address</label>
               <input
                 type="email"
@@ -66,7 +67,7 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="form-entry">
               <label htmlFor="password">Password</label>
               <input
                 type="password"
@@ -78,9 +79,11 @@ const Login = () => {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-success">
-              Login
-            </button>
+            <div className="form-button">
+              <button type="submit" className="btn btn-primary">
+                Login
+              </button>
+            </div>
           </form>
           <a href="/forgot-password" className="forgot-password">
             Forgot Password?
@@ -96,7 +99,7 @@ const Login = () => {
             </SocialLoginButton>
             <SocialLoginButton
               href="/auth/google"
-              imgSrc="./assets/images/icons/google.png"
+              imgSrc="/assets/images/icons/google.png"
               altText="Sign in with Google"
             >
               Sign in with Google

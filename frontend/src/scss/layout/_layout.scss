@@ -1,16 +1,19 @@
 @use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use "../base/base" as *;
+@use "../components/buttons" as *;
 
 .layout {
   display: flex;
   flex-direction: column;
-  min-height: max(var(--min_page_height), 100vh);
+  min-height: max(var(--min_page-height), 100vh);
 
+  // Main content container (used for page content)
   .content {
     flex-grow: 1;
     padding: var(--std_padding);
   }
 
+  // Sidebar styles (if your design includes a sidebar)
   .sidebar {
     width: 250px;
     background-color: var(--dark-color);
@@ -18,26 +21,42 @@
     padding: var(--std_padding);
   }
 
+  // Optional main area styling
   .main {
     flex-grow: 1;
     padding: var(--std_padding);
   }
 
+  // Footer styles
   .footer {
-    height: var(--footer_height);
+    height: var(--footer-height);
     background-color: var(--bg-color);
     text-align: center;
     padding: var(--std_padding);
   }
 }
 
+/* Optional: Row layout for larger screens when using a sidebar alongside main content */
+@media (min-width: 769px) {
+  .layout {
+    flex-direction: row;
+  }
+  .sidebar {
+    flex: 0 0 250px; // Fixed sidebar width
+  }
+  .content,
+  .main {
+    flex: 1; // Main content takes remaining space
+  }
+}
+
+/* Mobile adjustments: Always use a column layout */
 @media (max-width: 768px) {
   .layout {
     flex-direction: column;
-
-    .sidebar {
-      width: 100%;
-      padding: var(--std_padding);
-    }
+  }
+  .sidebar {
+    width: 100%;
+    padding: var(--std_padding);
   }
 }

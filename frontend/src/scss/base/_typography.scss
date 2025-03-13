@@ -5,43 +5,42 @@
 */
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-    line-height: 1.2;
-    margin-bottom: var(--std_padding);
-  }
-  
-  h1 {
-    font-size: calc(var(--std_heading-size) * 1.2);
-  }
-  
-  h2 {
-    font-size: var(--std_heading-size);
-  }
-  
-  h3, h4, h5, h6 {
-    font-size: calc(var(--std_heading-size) * 0.8);
-  }
-  
-  p {
-    font-size: var(--std_paragraph-size);
-    margin-bottom: var(--std_padding);
-  }
-  
-  /* Blockquote styling */
-  blockquote {
-    font-style: italic;
-    margin: var(--std_padding) 0;
-    padding-left: var(--std_padding);
-    border-left: 0.2rem solid var(--btn-color);
-  }
-  
-  /* Anchor link styling */
-  a {
-    color: var(--btn-color);
-    transition: color var(--transition-speed);
-  }
-  
-  a:hover {
-    color: var(--btn-hover);
-  }
-  
+  font-weight: bold;
+  line-height: var(--std_line-height);
+  margin-bottom: var(--std_margin);
+}
+
+h1 {
+  font-size: calc(var(--std_heading-size) * 1.2);
+}
+
+h2 {
+  font-size: var(--std_heading-size);
+}
+
+h3, h4, h5, h6 {
+  font-size: calc(var(--std_heading-size) * 0.8);
+}
+
+p {
+  font-size: var(--std_paragraph-size);
+  margin-bottom: var(--std_margin);
+}
+
+/* Blockquote styling */
+blockquote {
+  font-style: italic;
+  margin: var(--std_padding) 0;
+  padding-left: var(--std_padding);
+  border-left: 0.2rem solid var(--btn-color);
+}
+
+/* Anchor link styling */
+a {
+  color: var(--btn-color);
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--btn-hover);
+}

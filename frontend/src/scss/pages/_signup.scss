@@ -1,5 +1,6 @@
-@use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+@use "../abstracts/utilities" as *;
+@use "../components/form" as form;
 
 .signup-section {
   @include section;
@@ -8,20 +9,21 @@
   align-items: center;
 
   .signup-container {
-    width: 400px;
-    padding: var(--std_padding);
-    background-color: var(--bg-light);
-    border-radius: var(--border-radius);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    @extend .grid;
+    @extend .grid-two-cols;
+    min-width: 100%;
+    padding: 0 calc(var(--std_padding) * 2);
+    align-items: center;
+    gap: calc(var(--std_gap) * 2);
 
-    h2 {
-      font-size: var(--std_heading-size);
-      text-align: center;
-      margin-bottom: var(--std_margin);
+    .signup-message {
+      padding: calc(var(--std_padding) * 4);
+      align-self: center;
     }
 
-    .form-container {
-      width: 100%;
+    .signup-form-container {
+      @extend .form-container;
+      min-width: 100%;
     }
   }
 }
@@ -30,5 +32,6 @@
   .signup-section .signup-container {
     width: 100%;
     padding: var(--std_padding);
+    grid-template-columns: 1fr; // Collapse to single column on small screens
   }
 }

@@ -1,21 +1,20 @@
-@use "../abstracts/variables" as *;
-
-.navbar-container {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: var(--std_left-right-padding-plus1);
   position: sticky;
   top: 0;
   z-index: 1000;
   background-color: transparent;
+  box-shadow: 0 4px 10px var(--btn-color);
   transition:
     background-color var(--transition-speed) ease,
     box-shadow var(--transition-speed) ease;
 
   &.scrolled {
     background-color: rgba(211, 211, 211, 0.1);
-    -webkit-backdrop-filter: blur(5px); /* Safari & iOS */
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -29,18 +28,19 @@
 }
 
 .site-logo {
-  width: var(--logo_width_height);
-  height: var(--logo_width_height);
+  width: var(--logo-width-height);
+  height: var(--logo-width-height);
 }
 
 .site-name {
   margin-left: 0.8rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
   color: var(--text-color);
 
   .color-primary {
-    color: var(--btn-color);
+    color: var(--btn-color)
+    ;
   }
 }
 
@@ -76,10 +76,13 @@
 .nav-menu {
   display: flex;
   gap: 1.5rem;
+  font-size: var(--std_font-size);
 
   ul {
     display: flex;
     gap: 1.5rem;
+    padding: 0;
+    margin: 0;
   }
 
   li {
@@ -88,16 +91,22 @@
 
   a {
     padding: 0.8rem;
-    color: white;
+    color: var(--btn-color);
     text-decoration: none;
     transition: var(--transition-speed);
     display: inline-block;
 
     &:hover,
     &.active {
-      color: var(--btn-color);
+      color: white;
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 0.5rem;
+    }
+
+    /* Added focus styles for accessibility */
+    &:focus {
+      outline: 2px dashed white;
+      outline-offset: 2px;
     }
   }
 }

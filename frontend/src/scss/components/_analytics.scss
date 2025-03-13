@@ -1,35 +1,25 @@
 // components/_analytics.scss
-@use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
 @mixin analyticsSection {
   @include container;
-  margin: var(--std_gap) auto;
+  margin: var(--std_gap) calc(var(--std_gap)*8);
   background-color: var(--dark-color);
   border-radius: var(--border-radius);
 
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--std_gap);
+    gap: calc(var(--std_gap)*4);
 
-    .div1 {
+    .analytics-item {
       text-align: center;
-      border-right: var(--border_thin);
-      padding: var(--std_left-right_padding_plus1);
+      border-right: var(--border-thin);
+      padding: var(--std_left-right-padding-plus1);
 
-      // Add vertical bar separator on larger screens
-      &:not(:nth-child(4n))::after {
-        content: "|";
-        color: var(--text-color);
-        margin-left: var(--std_padding);
-      }
-
+      // For every 4th item, remove the right border and separator
       &:nth-child(4n) {
         border-right: none;
-        &::after {
-          content: "";
-        }
       }
 
       h1,
@@ -39,27 +29,44 @@
     }
   }
 
+  // Tablet devices: switch to 2 columns
   @media (max-width: 1024px) {
     .grid {
       grid-template-columns: repeat(2, 1fr);
-      .div1 {
-        border-right: none;
-        border-bottom: var(--border_thin);
-        padding: var(--std_padding);
-        &::after {
-          content: "";
+      gap: calc(var(--std_gap)*4);
+
+      .analytics-item {
+        text-align: center;
+        border-right: var(--border-thin);
+        padding: var(--std_left-right-padding-plus1);
+
+        &:not(:nth-child(2n))::after {
+          content: "|";
+          color: var(--text-color);
+          display: inline-block;
+          margin-left: var(--std_padding);
+        }
+
+        &:nth-child(2n) {
+          border-right: none;
+          &::after {
+            content: "";
+          }
         }
       }
     }
   }
 
+  // Mobile devices: single-column layout (no separator)
   @media (max-width: 600px) {
     .grid {
       grid-template-columns: 1fr;
-      .div1 {
-        border-bottom: var(--border_thin);
-        &:last-child {
-          border-bottom: none;
+
+      .analytics-item {
+        border: none;
+        padding: var(--std_padding);
+        &::after {
+          content: "";
         }
       }
     }

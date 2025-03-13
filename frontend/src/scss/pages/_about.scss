@@ -1,4 +1,3 @@
-@use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 @use "../abstracts/utilities" as *;
 @use "../components/analytics" as analytics;
@@ -24,13 +23,6 @@
       font-size: var(--std_heading-size);
       margin-bottom: var(--std_margin);
       color: var(--btn-color);
-    }
-
-    .about-subtext {
-      font-size: var(--std_paragraph-size);
-      line-height: var(--std_line-height);
-      margin-bottom: var(--std_margin);
-      color: var(--text-color);
     }
 
     .btn-group {

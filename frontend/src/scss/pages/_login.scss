@@ -1,5 +1,6 @@
-@use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+@use "../abstracts/utilities" as *;
+@use "../components/form" as form;
 
 .login-section {
   @include section;
@@ -8,21 +9,55 @@
   align-items: center;
 
   .login-container {
-    width: 400px;
-    padding: var(--std_padding);
-    background-color: var(--bg-light);
-    border-radius: var(--border-radius);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    @extend .grid;
+    @extend .grid-two-cols;
+    min-width: 100%;
+    padding: 0 calc(var(--std_padding) * 2);
+    align-items: center;
+    gap: calc(var(--std_gap) * 2);
 
-    h2 {
-      font-size: var(--std_heading-size);
-      text-align: center;
-      margin-bottom: var(--std_margin);
+    .login-message {
+      padding: calc(var(--std_padding) * 4);
+      align-self: center;
     }
 
-    .form-container {
-      width: 100%;
+    .login-form-container {
+      @extend .form-container;
+      min-width: 100%;
     }
+  }
+
+  // Social login styles
+  .social-login {
+    display: flex;
+    flex-direction: column; // or row if you prefer side-by-side buttons
+    gap: var(--std_gap);
+    align-items: center;
+    margin-top: var(--std_margin);
+
+    .btn-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-social img {
+      width: 24px;       // Fixed width for consistency
+      height: 24px;      // Fixed height for consistency
+      object-fit: contain;
+      margin-right: 0.5rem; // Space between icon and text
+    }
+  }
+
+  .forgot-password {
+    display: block;
+    text-align: center;
+    margin: var(--std_margin) auto;
+  }
+
+  .divider {
+    margin: var(--std_margin) auto;
+    width: 80%;
   }
 }
 
@@ -30,5 +65,6 @@
   .login-section .login-container {
     width: 100%;
     padding: var(--std_padding);
+    grid-template-columns: 1fr; // Switch to single-column layout on small screens
   }
 }

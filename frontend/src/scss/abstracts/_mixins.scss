@@ -1,14 +1,15 @@
-// abstracts/_mixins.scss
+/* _mixins.scss */
+@mixin section {
+  min-width: 100%;
+  min-height: var(--min-page-height);
+  padding: calc(var(--std_padding)*2) 0;
+}
+
 @mixin container {
-  max-width: var(--std_container_height_width);
-  margin: var(--std_margin_container);
-  padding: 0 calc(var(--std_padding) * 2);
+  max-width: var(--full-height-width);
+  margin: var(--std_margin-container);
+  padding: calc(var(--std_padding) * 2);
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-@mixin section {
-  min-height: var(--min_page_height);
-  padding: var(--std_section-padding) 0;
 }

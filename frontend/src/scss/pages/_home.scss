@@ -1,11 +1,11 @@
-@use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 @use "../abstracts/utilities" as *;
-@use "../components/analytics" as analytics;
+@use "../components/analytics" as *;
 
 .home-section {
   @include section;
 
+  // Banner Section
   .banner-container {
     @include container;
     height: 50vh;
@@ -33,6 +33,8 @@
     }
   }
 
+
+  // Main Content Section
   .section-main {
     @include container;
 
@@ -47,15 +49,6 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-
-      h2 {
-        font-size: var(--std_heading-size);
-        margin: var(--std_margin);
-      }
-
-      p {
-        font-size: var(--std_paragraph-size);
-      }
 
       .btn-group {
         margin-top: var(--std_margin);
@@ -75,7 +68,19 @@
     }
   }
 
+
+  // Analytics Section
   .analytics-section {
-    @include analytics.analyticsSection;
+    @include analyticsSection;
+  }
+
+  // Reverse Modifier for additional content layout
+  &.reverse {
+    .container {
+      @extend .grid;
+      @extend .grid-two-cols;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
   }
 }

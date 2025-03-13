@@ -2,7 +2,7 @@ import "../scss/pages/_services.scss";
 
 const Services = () => {
   return (
-    <main className="section-1">
+    <section className="services-section" aria-label="Our Services">
       {/* Service Content Section */}
       <section className="section-services">
         <div className="container">
@@ -16,7 +16,7 @@ const Services = () => {
           </ul>
         </div>
       </section>
-    </main>
+    </section>
   );
 };
 

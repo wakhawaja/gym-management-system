@@ -18,7 +18,7 @@ ol {
   list-style: none;
 }
 
-/* Reset images and media to be responsive */
+/* Ensure media elements are responsive */
 img,
 video,
 canvas,
@@ -33,7 +33,7 @@ a {
   color: inherit;
 }
 
-/* Set default border to none for form elements */
+/* Reset form elements */
 input,
 textarea,
 select,
@@ -43,9 +43,9 @@ button {
   outline: none;
 }
 
-/* Set body defaults */
+/* Body defaults */
 body {
-  font-family: sans-serif; // You may update this to your preferred font stack
+  font-family: var(--font-family);
   font-size: var(--std_font-size);
   line-height: var(--std_line-height);
   background-color: var(--bg-color);

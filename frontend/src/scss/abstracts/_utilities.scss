@@ -1,7 +1,7 @@
-// Utility Classes & Grid Layouts
+/* _utilities.scss */
 .grid {
   display: grid;
-  gap: var(--std_gap);
+  gap: calc(var(--std_gap)*2);
   align-items: center;
 }
 

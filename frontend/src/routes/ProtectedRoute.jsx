@@ -7,7 +7,11 @@ const ProtectedRoute = () => {
 
   if (loading) return <LoadingSpinner />;
 
-  return user ? <Outlet /> : <Navigate to="/login" replace state={{ from: window.location.pathname }} />;
+  return user ? (
+    <Outlet />
+  ) : (
+    <Navigate to="/login" replace state={{ from: window.location.pathname }} />
+  );
 };
 
 export default ProtectedRoute;
