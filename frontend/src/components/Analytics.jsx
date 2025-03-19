@@ -1,9 +1,12 @@
+import React from "react";
+import "../scss/components/_analytics.scss";
+
 const Analytics = () => (
   <section className="analytics-section">
     <div className="grid">
       <div className="analytics-item">
         <h1>10+</h1>
-        <p>year's of experience</p>
+        <p>years of experience</p>
       </div>
       <div className="analytics-item">
         <h1>10,000+</h1>

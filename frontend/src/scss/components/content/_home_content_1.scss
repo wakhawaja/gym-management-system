@@ -1,0 +1,36 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/utilities" as *;
+
+.section-main.reverse {
+  @include container;
+
+  .container {
+    @extend .grid;
+    @extend .grid-two-cols;
+    align-items: center;
+    flex-direction: row-reverse;  // Reverse order
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .btn-group {
+      margin-top: var(--std_margin);
+    }
+  }
+
+  .main-video {
+    display: flex;
+    justify-content: center;
+
+    .promo-video {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: var(--border-radius);
+    }
+  }
+}

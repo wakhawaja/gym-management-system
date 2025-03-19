@@ -1,0 +1,29 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/utilities" as *;
+@use "../../components/form" as form;
+
+.signup-form-wrapper {
+  padding: calc(var(--std_padding) * 2);
+  width: 100%;
+  min-width: 500px;
+  @extend .form-container;
+  margin: var(--std_margin-container) auto;
+
+  .message {
+    margin-top: var(--std_margin);
+    font-size: var(--std_paragraph-size);
+    color: var(--success-color);
+    text-align: center;
+  }
+
+  .signup-footer {
+    text-align: center;
+    margin-top: var(--std_margin);
+  }
+}
+
+@media (max-width: 600px) {
+  .signup-form-wrapper {
+    padding: calc(var(--std_padding) / 2);
+  }
+}

@@ -34,9 +34,10 @@
   /* Layout */
   --full-height-width: 100%;
   --std_height-width: 98%;
-  --footer-height: 60px;
-  --min-page-height: calc(100vh - var(--footer-height));
+  --min-footer-height: 60px;
+  --min-page-height: calc(100vh - var(--min-footer-height));
   --logo-width-height: 40px;
+  --std_map-height: 450px;
 
   /* Borders & Effects */
   --border-thin: 0.2rem solid var(--text-color);

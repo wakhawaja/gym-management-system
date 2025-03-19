@@ -1,0 +1,26 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/utilities" as *;
+
+.login-content {
+  padding: calc(var(--std_padding) * 4);
+  text-align: left;
+
+  .login-heading {
+    font-size: var(--std_heading-size);
+    margin-bottom: var(--std_margin);
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--std_margin) 0;
+    li {
+      font-size: var(--std_paragraph-size);
+      margin-bottom: var(--std_margin);
+    }
+  }
+
+  .features-subtext {
+    font-size: var(--std_paragraph-size);
+  }
+}

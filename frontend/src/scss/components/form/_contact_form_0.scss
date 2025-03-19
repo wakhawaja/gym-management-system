@@ -1,0 +1,11 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/utilities" as *;
+@use "../../components/form" as form;
+
+.contact-form-wrapper {
+  padding: calc(var(--std_padding) * 2);
+  width: 100%;
+  min-width: 500px;
+  @extend .form-container;
+  margin: var(--std_margin-container) auto;
+}

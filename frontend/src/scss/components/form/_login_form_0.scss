@@ -1,0 +1,54 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/utilities" as *;
+@use "../../components/form" as form;
+
+.login-form-wrapper {
+  padding: calc(var(--std_padding) * 2);
+  width: 100%;
+  min-width: 500px;
+  @extend .form-container;
+  margin: var(--std_margin-container) auto;
+
+  .forgot-password {
+    display: block;
+    text-align: center;
+    margin: var(--std_margin) auto;
+  }
+
+  .divider {
+    margin: var(--std_margin) auto;
+    width: 80%;
+  }
+
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    gap: var(--std_gap);
+    align-items: center;
+    margin-top: var(--std_margin);
+
+    .btn-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .signup-link {
+    text-align: center;
+    margin-top: var(--std_margin);
+  }
+}
+
+@media (max-width: 600px) {
+  .login-form-wrapper {
+    padding: calc(var(--std_padding) / 2);
+  }
+}

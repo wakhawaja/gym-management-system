@@ -1,7 +1,6 @@
-/* _utilities.scss */
 .grid {
   display: grid;
-  gap: calc(var(--std_gap)*2);
+  gap: calc(var(--std_gap) * 2);
   align-items: center;
 }
 

@@ -1,37 +1,26 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/utilities" as *;
-@use "../components/form" as form;
 
 .signup-section {
   @include section;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
 
-  .signup-container {
-    @extend .grid;
-    @extend .grid-two-cols;
-    min-width: 100%;
-    padding: 0 calc(var(--std_padding) * 2);
-    align-items: center;
-    gap: calc(var(--std_gap) * 2);
-
-    .signup-message {
-      padding: calc(var(--std_padding) * 4);
-      align-self: center;
-    }
-
-    .signup-form-container {
-      @extend .form-container;
-      min-width: 100%;
-    }
-  }
+.signup-container {
+  @extend .grid;
+  @extend .grid-two-cols;
+  min-width: 100%;
+  padding: 0 calc(var(--std_padding) * 2);
+  align-items: center;
+  gap: calc(var(--std_gap) * 2);
 }
 
 @media (max-width: 600px) {
-  .signup-section .signup-container {
-    width: 100%;
+  .signup-container {
+    grid-template-columns: 1fr;
     padding: var(--std_padding);
-    grid-template-columns: 1fr; // Collapse to single column on small screens
   }
 }

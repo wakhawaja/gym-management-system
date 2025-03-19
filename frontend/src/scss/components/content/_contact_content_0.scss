@@ -1,0 +1,39 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/utilities" as *;
+
+.contact-content {
+  text-align: center;
+  padding: calc(var(--std_padding) * 2);
+
+  .contact-heading {
+    font-size: var(--std_heading-size);
+    margin-bottom: var(--std_margin);
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100px; // Adjust as needed
+      height: 5px;
+      background-color: var(--btn-color);
+      border-radius: var(--border-radius);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 0.5rem;
+    }
+  }
+
+  .contact-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--std_padding);
+
+    img {
+      width: 80%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}

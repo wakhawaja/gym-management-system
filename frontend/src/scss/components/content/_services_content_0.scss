@@ -1,0 +1,21 @@
+@use "../../abstracts/mixins" as *;
+@use "../../abstracts/utilities" as *;
+
+.section-services {
+  width: 100%;
+
+  .container {
+    justify-items: center;
+  }
+
+  .services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: var(--std_paragraph-size);
+      margin-bottom: var(--std_margin);
+    }
+  }
+}

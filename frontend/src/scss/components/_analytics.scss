@@ -1,25 +1,32 @@
-// components/_analytics.scss
 @use "../abstracts/mixins" as *;
 
 @mixin analyticsSection {
-  @include container;
-  margin: var(--std_gap) calc(var(--std_gap)*8);
+  margin: var(--std_gap) calc(var(--std_gap) * 8);
+  padding: var(--std_padding);
   background-color: var(--dark-color);
   border-radius: var(--border-radius);
 
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: calc(var(--std_gap)*4);
+    gap: calc(var(--std_gap) * 4);
 
     .analytics-item {
+      position: relative;
       text-align: center;
-      border-right: var(--border-thin);
-      padding: var(--std_left-right-padding-plus1);
+      padding: var(--std_left-right_padding_plus1);
 
-      // For every 4th item, remove the right border and separator
-      &:nth-child(4n) {
-        border-right: none;
+      // Desktop: Add vertical separator for items not in the last column
+      @media (min-width: 769px) {
+        &:not(:nth-child(4n))::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 1px;
+          height: 100%;
+          background-color: var(--text-color);
+        }
       }
 
       h1,
@@ -29,46 +36,56 @@
     }
   }
 
-  // Tablet devices: switch to 2 columns
-  @media (max-width: 1024px) {
+  // Tablet devices: Switch to 2 columns; add horizontal separator below the first row (items 1 and 2)
+  @media (max-width: 768px) {
     .grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: calc(var(--std_gap)*4);
+      gap: calc(var(--std_gap) * 4);
 
       .analytics-item {
-        text-align: center;
-        border-right: var(--border-thin);
-        padding: var(--std_left-right-padding-plus1);
+        position: relative;
+        padding: var(--std_left-right_padding_plus1);
 
-        &:not(:nth-child(2n))::after {
-          content: "|";
-          color: var(--text-color);
-          display: inline-block;
-          margin-left: var(--std_padding);
-        }
-
-        &:nth-child(2n) {
-          border-right: none;
-          &::after {
-            content: "";
-          }
-        }
-      }
-    }
-  }
-
-  // Mobile devices: single-column layout (no separator)
-  @media (max-width: 600px) {
-    .grid {
-      grid-template-columns: 1fr;
-
-      .analytics-item {
-        border: none;
-        padding: var(--std_padding);
+        // Remove vertical separator
         &::after {
           content: "";
         }
       }
+
+      // Add horizontal separator for the first row items
+      .analytics-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--text-color);
+      }
     }
   }
+
+  // Mobile devices: Single column layout; add horizontal separator below each item except the last; reduce font size
+  @media (max-width: 425px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: var(--std_gap);
+      max-width: 425px;
+
+      .analytics-item {
+        padding: var(--std_padding);
+        // Add bottom border for every item except the last one
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--text-color);
+        }
+        &::after {
+          content: "";
+        }
+        // Reduce font size on mobile
+        h1,
+        h3 {
+          font-size: calc(var(--std_heading-size) * 0.8);
+        }
+      }
+    }
+  }
+}
+
+// Apply the mixin to .analytics-section
+.analytics-section {
+  @include analyticsSection;
 }

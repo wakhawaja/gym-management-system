@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "../scss/components/_banner.scss"; // SCSS for Banner
 
 const sliderSettings = {
   dots: true,
@@ -34,7 +35,10 @@ const Banner = () => {
         {bannerImages.map((image, index) => (
           <div key={index} className="banner-image">
             <picture>
-              <source media="(max-width: 767px)" srcSet={`${imageBasePath}/${image}`} />
+              <source
+                media="(max-width: 767px)"
+                srcSet={`${imageBasePath}/${image}`}
+              />
               <img
                 src={`${imageBasePath}/${image}`}
                 alt="Gold Spa Banner"

@@ -1,0 +1,9 @@
+.contact-map {
+  margin-top: var(--std_margin);
+  width: var(--std_height-width);
+  iframe {
+    border: none;
+    width: var(--full-height-width);
+    height: var(--std_map-height);
+  }
+}

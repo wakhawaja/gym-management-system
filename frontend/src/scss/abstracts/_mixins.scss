@@ -1,8 +1,10 @@
-/* _mixins.scss */
 @mixin section {
   min-width: 100%;
   min-height: var(--min-page-height);
-  padding: calc(var(--std_padding)*2) 0;
+  padding: calc(var(--std_padding) * 2) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin container {

@@ -3,12 +3,11 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  /* Adjust the width to prevent the form from spanning too wide */
+  justify-content: center;
+  align-items: center;
   width: 90%;
   max-width: 500px;
-  /* Cover at least the full viewport height */
-  min-height: max(var(--min_page_height), 100vh);
-  /* Spacing & background */
+  min-height: max(var(--min-page-height), 100vh);
   margin: var(--std_margin-container) auto;
   padding: var(--std_padding);
   border-radius: var(--border-radius);
@@ -24,17 +23,16 @@
       margin-bottom: var(--std_margin);
       position: relative;
 
-      /* Horizontal line below heading */
       &::after {
         content: "";
         display: block;
-        width: 100px; /* Adjust the width to your preference */
-        height: 5px; /* Thickness of the line */
+        width: 100px; // Customize as needed
+        height: 5px;
         background-color: var(--btn-color);
         border-radius: var(--border-radius);
         position: absolute;
-        left: 50%; /* Center the line */
-        transform: translateX(-50%); /* Center the line */
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
 
@@ -80,7 +78,6 @@
       }
     }
 
-    /* Force buttons to span the full width of the form */
     button {
       display: block;
       width: 100%;
@@ -89,7 +86,6 @@
     }
   }
 
-  /* Additional spacing or styling for messages or footers if needed */
   .message {
     margin-top: var(--std_margin);
     font-size: var(--std_paragraph-size);

@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
       <Suspense fallback={<LoadingSpinner />}>
         <Header />
       </Suspense>
-      <main className="content">{children}</main>
+      <main >{children}</main>
       <Suspense fallback={<LoadingSpinner />}>
         <Footer />
       </Suspense>
